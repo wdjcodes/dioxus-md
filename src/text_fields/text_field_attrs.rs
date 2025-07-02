@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
 
+/// Input types supported by Material Design TextFields
 #[derive(Clone, PartialEq)]
 pub enum TextFieldTypes {
     Text,
@@ -29,6 +30,7 @@ impl <'a, T: Into<&'a str>> From<T> for TextFieldTypes {
     }
 }
 
+/// Combined attributes for Material Design TextFields and html `<input>` tags
 #[derive(Clone, PartialEq, Props)]
 pub struct TextFieldAttrs {
 
