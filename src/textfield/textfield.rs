@@ -1,6 +1,6 @@
 use dioxus::{dioxus_core, prelude::*};
 
-use crate::text_fields::text_field_attrs::TextFieldAttrs;
+use crate::TextFieldAttrs;
 
 #[component]
 pub fn TextField(
@@ -37,12 +37,23 @@ pub fn TextField(
 
     rsx!(
         div {
-            position: "relative",
+            background: "#36343B",
+            padding_left: "16px",
+            padding_right: "16px",
+            padding_top: "16px",
+            padding_bottom: "16px",
+            color: "#CAC4D0",
+            border_bottom: "1px solid #CAC4D0",
+            // position: "relative",
             display: "flex",
             font_family: "sans-serif",
-            border_bottom: "2px solid #999",
-            label { {props.label} }
+            label { 
+                {props.label} 
+            }
             input {
+                // background: "transparent",
+                // border: "none",
+                style:"caret-color: #D0BCFF; background: transparent; border: none; outline: none;",
                 value: props.value,
             }
         }

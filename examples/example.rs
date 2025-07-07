@@ -3,7 +3,12 @@ use dioxus_md::TextField;
 
 fn app() -> Element {
     rsx!(
-        TextField { label: "Hello world!" }
+        div { 
+            width: "96vw",
+            height: "96vh",
+            background: "black",
+            TextField { label: "Hello world!" }
+         }
     )
 }
 
