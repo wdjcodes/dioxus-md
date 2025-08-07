@@ -1,0 +1,13 @@
+.textfield {
+    background: #36343B;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    color: #CAC4D0;
+    border-bottom: 1px solid #CAC4D0;
+    position: relative;
+    font-family: sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+}

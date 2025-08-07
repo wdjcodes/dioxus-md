@@ -14,22 +14,6 @@ pub enum TextFieldTypes {
     Unknown,
 }
 
-// impl <'a, T: Into<&'a str>> From<T> for TextFieldTypes {
-//     fn from(value: T) -> Self {
-//         match str::to_lowercase(value.into()).as_str() {
-//             "text" => Self::Text,
-//             "textarea" => Self::TextArea,
-//             "email" => Self::Email,
-//             "number" => Self::Number,
-//             "password" => Self::Password,
-//             "search" => Self::Search,
-//             "tel" => Self::Tel,
-//             "url" => Self::Url,
-//             _ => Self::Unknown,
-//         }
-//     }
-// }
-
 /// Combined attributes for Material Design TextFields and html `<input>` tags
 #[derive(Clone, PartialEq, Props)]
 pub struct TextFieldAttrs {

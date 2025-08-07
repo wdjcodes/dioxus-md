@@ -2,11 +2,13 @@ use dioxus::prelude::*;
 use dioxus_md::TextField;
 
 fn app() -> Element {
+    
     rsx!(
-        div { 
+        div {
+            class: "example", 
             width: "96vw",
             height: "96vh",
-            background: "black",
+            background: "gray",
             TextField { label: "Hello world!" }
          }
     )
