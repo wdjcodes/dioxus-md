@@ -1,11 +1,10 @@
-use std::{f32, ops::{Add, Mul, Sub}};
 
 use dioxus_motion::{animations::utils::Animatable, prelude::Spring};
 
 
 pub fn make_spring(stiffness: f32, mass: f32, damping_ratio: f32) -> Spring {
     let damping = 2.0 * damping_ratio * f32::sqrt(mass * stiffness);
-    Spring { stiffness: stiffness, damping: damping, mass: mass, velocity: 0.0 }
+    Spring { stiffness: stiffness, damping, mass, velocity: 0.0 }
 }
 
 #[derive(Debug, Clone, Copy)]

@@ -2,6 +2,8 @@ use dioxus::prelude::*;
 use dioxus_md::TextField;
 
 fn app() -> Element {
+
+    let value = use_signal(||"".to_string());
     
     rsx!(
         div {
@@ -9,7 +11,8 @@ fn app() -> Element {
             width: "96vw",
             height: "96vh",
             background: "gray",
-            TextField { label: "Hello world!" }
+            div { height: "56px" }
+            TextField { label: "Hello world!", value: value }
          }
     )
 }

@@ -46,8 +46,8 @@ pub struct TextFieldAttrs {
     pub required: bool,
 
     /// The current value of the text field. It is always a string.
-    #[props(into, default = "")]
-    pub value: String,
+    #[props(default = use_signal(||"".to_string()))]
+    pub value: Signal<String>,
 
     /// An optional prefix to display before the input value.
     #[props(into, default = "")]
