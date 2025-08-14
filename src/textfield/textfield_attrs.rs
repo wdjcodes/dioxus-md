@@ -18,6 +18,10 @@ pub enum TextFieldTypes {
 #[derive(Clone, PartialEq, Props)]
 pub struct TextFieldAttrs {
 
+    /// Gets or sets whether or not the text field is in a disabled state.
+    #[props(default = false)]
+    pub disabled: bool,
+
     /// Gets or sets whether or not the text field is in a visually invalid state.
     #[props(default = false)]
     pub error: bool,
@@ -111,7 +115,11 @@ pub struct TextFieldAttrs {
     /// the text field behaves.
     /// 
     /// Text fields support a limited number of `<input>` types:
+    /// 
+    /// Currently Supported
     /// - text
+    /// 
+    /// Currently Unsupported
     /// - textarea
     /// - email
     /// - number
@@ -127,5 +135,4 @@ pub struct TextFieldAttrs {
     /// should provide.
     #[props(into, default = "")]
     pub auto_complete: String,
-
 }
