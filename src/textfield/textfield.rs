@@ -35,10 +35,23 @@ pub fn TextField(
     rsx!(
         document::Stylesheet{ href: STYLE_SHEET }
         div {
-            class: "textfield",
+            class: if props.disabled {
+                "textfield disabled"
+            } else {
+                "textfield"
+            },
             tabindex: "0",
+            "inert": if props.disabled {
+                Some("")
+            } else {
+                None
+            },
+            
             onfocusin: move |_| focused.set(true),
             onfocusout: move |_| focused.set(false),
+            div{
+                class: "background",
+            }
             div {
                 class: "statelayer",
             }
@@ -48,9 +61,11 @@ pub fn TextField(
             }
             input {
                 value: props.value,
+                disabled: props.disabled,
                 onmounted: move |elem| input.set(Some(elem.data)),
                 oninput: move |event| props.value.set(event.value()),
             }
+            div{ class: "status"}
         }
     )
 }
